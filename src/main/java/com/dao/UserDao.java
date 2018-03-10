@@ -4,11 +4,15 @@ import com.model.User;
 
 public interface UserDao {
 
-	public void registerUser(User user);
+	void registerUser(User user);
 
-	public boolean isEmailUnique(String email);
-	public User login(User user);
+	boolean isEmailUnique(String email);
 
-	public void update(User validUser);
-    User getUser(String email);
+	User login(User user);
+
+	void update(User validUser);
+
+	User getUser(String email);
+
+	void updateUser(User user);
 }

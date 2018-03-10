@@ -54,5 +54,10 @@ public class UserDaoImpl implements UserDao {
 		User user=(User) session.get(User.class, email);
 		return user;
 	}
+	public void updateUser(User user)
+	{
+		Session session =sessionFactory.getCurrentSession();
+		session.update(user);
+	}
 	
 }
