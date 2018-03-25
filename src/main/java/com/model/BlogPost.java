@@ -25,7 +25,7 @@ public class BlogPost {
 	@ManyToOne
 	private User postedBy;
 	private int likes;
-//	private boolean approved;
+	private boolean approved;
 	public int getId() {
 		return id;
 	}
@@ -62,12 +62,12 @@ public class BlogPost {
 	public void setLikes(int likes) {
 		this.likes = likes;
 	}
-//	public boolean isApproved() {
-//		return approved;
-//	}
-//	public void setApproved(boolean approved) {
-//		this.approved = approved;
-//	}
+	public boolean isApproved() {
+		return approved;
+	}
+	public void setApproved(boolean approved) {
+		this.approved = approved;
+	}
 	
 
 }

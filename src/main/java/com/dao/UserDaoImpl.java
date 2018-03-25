@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.model.User;
 
-@Repository
+@Repository("userDaoImpl")
 @Transactional
 public class UserDaoImpl implements UserDao {
 	@Autowired
