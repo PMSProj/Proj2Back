@@ -58,16 +58,16 @@ public class FriendDaoImpl implements FriendDao {
 	}
 	public List<Friend> listOfFriends(String email) {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createSQLQuery("select f.toId from Friend f where f.fromId.email=?  and f.status=? ");
-		query.setString(0, email);
-		query.setCharacter(1, 'A');
-		List<Friend> friendList1=query.list();
-		Query query2=session.createQuery("select f.fromId  from Friend f where f.toId.email=? ans f.status=?");
+		Query query1 = session.createQuery("select f.toId from Friend f where f.fromId.email=?  and f.status=? ");
+		query1.setString(0, email);
+		query1.setCharacter(1, 'A');
+		List<Friend> friendsList1=query1.list();
+		Query query2=session.createQuery("select f.fromId  from Friend f where f.toId.email=? and f.status=?");
 		query2.setString(0, email);
 		query2.setCharacter(1, 'A');
-		List<Friend> friendList2 = query2.list();
-		friendList1.addAll(friendList2);
-		return friendList1;
+		List<Friend> friendsList2 = query2.list();
+		friendsList1.addAll(friendsList2);
+		return friendsList1;
 	}
 	
 }

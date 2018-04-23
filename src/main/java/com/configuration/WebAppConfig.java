@@ -19,6 +19,8 @@ public class WebAppConfig extends WebMvcConfigurerAdapter
 	@Bean(name="multipartResolver")
 	public CommonsMultipartResolver commonsMultipartResolver(){
 		CommonsMultipartResolver  commonsMultipartResolver=new CommonsMultipartResolver();
+		commonsMultipartResolver.setMaxUploadSize(20971520); // 20MB
+		commonsMultipartResolver.setMaxInMemorySize(1048576);	// 1MB
 		return commonsMultipartResolver;
 	}
 }
